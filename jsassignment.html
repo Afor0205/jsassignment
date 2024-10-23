@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Similarities & Differences between var, let, const</title>
+        <style>
+            i{
+                color: red;
+                font-weight: 500;
+            }
+            button{
+                padding: 10px 25px;
+                background: rgb(253, 3, 3);
+                border: none;
+                border-radius: 10px;
+            }
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            h1{
+                color: red;
+            }
+            h2{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><center>SIMILARITIES AND DIFFERENCES BETWEEN LET, VAR, CONST</center></h1>
+        <p>
+            <b>
+                <h3>
+                   <center><h2> Similarities</h2> </center>
+                    <ul>
+                        <li>DECLARATION: All three are used to declare variables.</li>
+                        <li>DATA TYPE: Can be used with any data type(number, string, boolean, etc.).</li>
+                        <li>SCOPE: All three have scope, whether global, function, or block.</li>
+                        <li>ACCESSIBILITY: Variables declared with <u>let, var, const</u> can be accessed and used in expressions.</li>
+                        <li>JAVASCRIPT SYNTAX: Part of JavaScript, used in scripts, functions, and loops.</li>
+                        <li>BROWSER SUPPORT: Supported by modern browsers (Chrome, FireFox, Edge).</li>
+                        <li>USAGE: Used in various JavaScript contexts (Client-side, Server-side, desktop, Mobile).</li>
+                    </ul>
+                </h3>
+            </b>
+        </p>
+        <p>
+            <b>
+                <h3>
+                    <center><h2>Differences</h2></center>
+                    <ul>
+                        <li>SCOPE
+                            <ul>
+                                <li><i>var</i> : Function Scope(accessible throughout the function)</li>
+                                <li><i>let and const</i> : Block scope(accessible within the block e.g., if, loop, or function)</li>
+                            </ul>
+                        </li>
+                        <li>REDECLARATION
+                            <ul>
+                                <li><i>var</i> : Allows redeclaration </li>
+                                <li><i>let and const </i>: Does not allow redeclaration</li>
+                            </ul>
+                        </li>
+                        <li>CLOSURE
+                            <ul>
+                                <li><i>let and const </i>: Closed over</li>
+                                <li><i>var </i>: Function-scoped</li>
+                            </ul>
+                        </li>
+                        <li>GLOBAL VARIABLES 
+                            <ul>
+                                <li><i>var </i>: Declares global Variables when used outside functions</li>
+                                <li><i>let and const </i>: Do not declare global variables</li>
+                            </ul>
+                        </li>
+                        <li>PROPERTY ENUMERATION 
+                            <ul>
+                                <li><i>let and const </i>: Not enumerable</li>
+                                <li><i>var </i>: Enumerable</li>
+                            </ul>
+                        </li>
+                        <li>USE CASES 
+                            <ul>
+                                <li><i>var </i>: Legacy code, function-scoped variables</li>
+                                <li><i>let </i>: Block-scoped variables, reassignment</li>
+                                <li><i>const </i>: Constant, immutable variables</li>
+                            </ul>
+                        </li>
+                        <li>BEST PRACTICE
+                            <ul>
+                                <li>Use <i>const</i> : for Constants</li>
+                                <li>Use <i>let</i> : for variables</li>
+                                <li>Avoid <i>var</i> : unless necessary</li>
+                            </ul>
+                        </li>
+                        <li>HOISTING 
+                            <ul>
+                                <li><i>var </i>: Hoisted to the top of the function</li>
+                                <li><i>let and const </i>: Not hoisted</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </h3>
+            </b>
+        </p>
+        <center><button><a href="index.html">Previous</a></button></center>
+    </body>
+</html>
