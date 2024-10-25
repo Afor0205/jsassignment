@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comparison between corparison operator and logical operator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            h1{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="aboutme.html">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="index.html">Day1</a></li>
+              <li class="page-item"><a class="page-link" href="aboutme.html">Day2</a></li>
+              <li class="page-item"><a class="page-link" href="comp.html">Day3</a></li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+        </nav>
+        <h1><center>
+            DIFFERENCES BETWEEN COMPARISON OPERATOR AND LOGICAL OPERATORS
+        </center></h1>
+        <p>
+            <b>
+                <h2>COMPARISON OPERATORS</h2>
+            </b>
+            Comparison operators are used to evaluate and compare values in programming. 
+            Here's everything you need to know:
+        </p>
+        <h3><center>TYPES OF COMPARISON OPERATORS</center></h3>
+        <ol>
+            <li><b>Equal To(==):</b>
+                Checks if two values are equal. <br>
+                <b>Example: 5=5</b> returns <b>true</b>
+            </li>
+            <li><b>Not Equal To(!=):</b>
+                Checks if two values are not equal. <br>
+                <b>Example: 5 !=3</b> returns <b>true</b>
+            </li>
+            <li><b>Strictly Equal To(===):</b>
+                Checks if two values are equal and of the same data type. <br>
+                <b>Example: 5 === "5"</b> returns <b>false</b>
+            </li>
+            <li><b>Strictly Not Equal To(!==):</b>
+                Checks if two values are not equal to or not of the same data type. <br>
+                <b>Example: 5 !== "5"</b> returns <b>true</b>
+            </li>
+            <li><b>Greater Than(>):</b>
+                Checks if one value is greater than the other. <br>
+                <b>Example: 5 > 3</b> returns <b>true</b>
+            </li>
+            <li><b>Less Than(<):</b>
+                Checks if one value is less than another. <br>
+                <b>Example: 5 < 3</b> returns <b>false</b>
+            </li>
+            <li><b>Greater Than or Equal To(>=):</b>
+                Checks if one value is greater than or equal to another. <br>
+                <b>Example: 5 >= 5</b> returns <b>true</b>
+            </li>
+            <li><b>Less Than or Equal To(<=):</b>
+                Checks if one value is less than or equal to one another. <br>
+                <b>Example: 5 <= 3</b> returns <b>false</b> 
+            </li>
+        </ol>
+        <p> <b>Key Characteristics</b>
+            <ol>
+                <li><b>Return Value:</b>
+                    Comparison operators return a boolean value (true or false).
+                </li>
+                <li><b>Data Type:</b>
+                    Can compare numbers, strings, booleans, and other data types.
+                </li>
+                <li><b>Precedance:</b>
+                    Evaluated before logical operators.
+                </li>
+            </ol>
+        </p>
+        <p>
+            <b>
+                <h2>
+                    LOGICAL OPERATORS
+                </h2>
+            </b>
+            Logical operators are used to combine conditional statements in programmiong, 
+            enambling your code to make decision based on multiple conditions.
+        </p>
+        <h3><center>TYPES OF LOGICAL OPERATORS</center></h3>
+        <ol>
+            <li><b>AND(&&):</b>
+                Returns true if both conditions are true. <br>
+                <b>Example: true && true</b> returns <b>true</b>
+            </li>
+            <li><b>OR(||):</b>
+                Returns true if at least one condition is true. <br>
+                <b>Example: true || false</b> returns true
+            </li>
+            <li><b>NOT(!):</b>
+                Reverses the truthiness of a condition. <br>
+                <b>Example: !true</b> returns <b>false</b>
+            </li>
+        </ol>
+        <p>
+            <b>
+                Key Characteristics
+            </b>
+            <ol>
+                <li><b>Return Value:</b>
+                     Logical operators return a boolean value (true or false).
+
+                </li>
+                <li><b>Short-Circuiting:</b>
+                  Logical operators evaluate conditions sequentially and stop evaluating as soon as the result is determined.
+
+                </li>
+                <li><b>Precedance:</b>
+                    Evaluated after comparison operators.
+                </li>
+            </ol>
+        </p>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
