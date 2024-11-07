@@ -10,16 +10,20 @@
 
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="comp.html">Previous</a>
-              </li>
               <li class="page-item"><a class="page-link" href="index.html">Day1</a></li>
               <li class="page-item"><a class="page-link" href="aboutme.html">Day2</a></li>
               <li class="page-item"><a class="page-link" href="comp.html">Day3</a></li>
-              <li class="page-item"><a class="page-link" href="retirementcalc.html">Day4</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
+              
+              <div class="pagination">
+                <button class="page-item dropdown-toggle btn btn-light" data-bs-toggle="dropdown">
+                  Calculator
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="page-item"><a class="page-link" href="retirementcalc.html">Retirement Calculator</a></li><br>
+                    <li class="page-item"><a class="page-link" href="simple.html">Simple Calculator</a></li>
+                  
+                </ul>
+              </div>
             </ul>
         </nav>
 
@@ -40,7 +44,7 @@
             
             // alert(`You are ${agecalc(a,thisyear)} years old`);
             if(age>agecalc(a,thisyear)){
-                alert(`You should retire in ${age - agecalc(a, thisyear)} years`)
+                alert(`You should retire in ${age - agecalc(a, thisyear)} years times`)
             }else if(age==agecalc(a,thisyear)){
                 alert('You can now retire ')
             }else{
