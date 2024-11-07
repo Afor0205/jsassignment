@@ -40,11 +40,11 @@
             
             // alert(`You are ${agecalc(a,thisyear)} years old`);
             if(age>agecalc(a,thisyear)){
-                alert(`You should retire in ${age - agecalc(a, thisyear)+thisyear} years`)
+                alert(`You should retire in ${age - agecalc(a, thisyear)} years`)
             }else if(age==agecalc(a,thisyear)){
                 alert('You can now retire ')
             }else{
-                alert(`You should have retired in ${thisyear - (agecalc(a, thisyear)-age)}`)
+                alert(`You should have retired in ${(agecalc(a, thisyear)-age)}`)
             }
         </script>
 
