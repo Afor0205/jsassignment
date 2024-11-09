@@ -4,6 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Retirement Calculator</title>
+
+        <style>
+            .pen{
+                background: red;
+                color: black;
+                width: fit-content;
+                padding: 40px;
+                text-align: center;
+            }
+            .all{
+                background-color: black;
+                margin-top: 50px;
+                color: red;
+                padding: 50px 50px;
+                text-align: center;
+                width: fit-content;
+            }
+           
+        </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
     <body>
@@ -13,51 +32,183 @@
               <li class="page-item"><a class="page-link" href="index.html">Day1</a></li>
               <li class="page-item"><a class="page-link" href="aboutme.html">Day2</a></li>
               <li class="page-item"><a class="page-link" href="comp.html">Day3</a></li>
+              <li class="page-item"><a class="page-link" href="retirementcalc.html">Day4</a></li>
               
-              <div class="pagination">
-                <button class="page-item dropdown-toggle btn btn-light" data-bs-toggle="dropdown">
-                  Calculator
-                </button>
-                <ul class="dropdown-menu">
-                    <li class="page-item"><a class="page-link" href="retirementcalc.html">Retirement Calculator</a></li><br>
-                    <li class="page-item"><a class="page-link" href="simple.html">Simple Calculator</a></li>
-                  
-                </ul>
-              </div>
+             
             </ul>
         </nav>
-
-
-
-
-
+            <div class="pen container">
+            <h3 class="text-center">RETIREMENT CALCULATOR</h3><br>
+            <input type="text" placeholder="What year were you born?" id="man"><br><br>
+            <button onclick="calculate()" id="moon">Calculate when to retire</button>
+            <b><p class="answer"></p></b>
+        </div>
         <script>
-            
-            let age = 65;
-            let agecalc=(ageofBirth, currentyear)=>{
-
-                return currentyear-ageofBirth;
+            let retirementAge = 65;
+            let ageCalc = (yearOfBirth, currentYear) => {
+                return currentYear - yearOfBirth;
             }
-
-            let a = prompt('Which Year were you born?');
-            let thisyear= new Date().getFullYear();
-            
-            // alert(`You are ${agecalc(a,thisyear)} years old`);
-            if(age>agecalc(a,thisyear)){
-                alert(`You should retire in ${age - agecalc(a, thisyear)} years times`)
-            }else if(age==agecalc(a,thisyear)){
-                alert('You can now retire ')
-            }else{
-                alert(`You should have retired ${(agecalc(a, thisyear)-age)} years back`)
+            function calculate() {
+                let yearOfBirth = document.getElementById('man').value;  
+                if (isNaN(yearOfBirth) || yearOfBirth === "") {
+                    alert("Please enter a valid year of birth.");
+                    return;
+                }
+                let currentYear = new Date().getFullYear();
+                let age = ageCalc(Number(yearOfBirth), currentYear);
+    
+                let remainingYears = retirementAge - age;
+    
+                let result = '';
+                if (remainingYears > 0) {
+                    result = `You will retire in ${remainingYears} years`;
+                } else if (remainingYears === 0) {
+                    result = 'You can retire this year!';
+                } else {
+                    result = `You should have retired ${-remainingYears} years ago`;
+                }
+                document.querySelector('.answer').innerText = result;
             }
         </script>
+        <center>
+            <div class="all">
+
+                <h3>Simple Calculator</h3>
+
+                <input placeholder="firstnumber" id="input1"><br>
+                <span class="currentsymbol"></span><br>
+                <input placeholder="secondnumber" id="input2"><br>
+                <span class="myanswer"></span><br>
+                <button onclick="addit()">*</button>
+                <button onclick="addit1()">+</button>
+                <button onclick="addit2()">/</button>
+                <button onclick="addit3()">-</button>
+                <button onclick="addit4()">%</button>
+                <script>
 
 
+                    function addit(){
+                        let firstinput= document.querySelector('#input1').value;
+                        firstinput= Number(firstinput);
+                        let symbol= document.querySelector('.currentsymbol');
+                        let secondinput= document.querySelector('#input2').value;
+                        secondinput= Number(secondinput)
+                        let myanswer=document.querySelector('.myanswer');
 
+                        symbol.textContent ='*';
+                        myanswer.innerHTML = `=${firstinput*secondinput}`;
+                    }
+                    function addit1(){
+                        let firstinput= document.querySelector('#input1').value;
+                        firstinput= Number(firstinput);
+                        let symbol= document.querySelector('.currentsymbol');
+                        let secondinput= document.querySelector('#input2').value;
+                        secondinput= Number(secondinput)
+                        let myanswer=document.querySelector('.myanswer');
 
+                        symbol.textContent='+';
+                        myanswer.innerHTML = `=${firstinput+secondinput}`;
+                    }
+                    function addit2(){
+                        let firstinput= document.querySelector('#input1').value;
+                        firstinput= Number(firstinput);
+                        let symbol= document.querySelector('.currentsymbol');
+                        let secondinput= document.querySelector('#input2').value;
+                        secondinput= Number(secondinput)
+                        let myanswer=document.querySelector('.myanswer');
+                        symbol.textContent='/';
+                        myanswer.innerHTML = `=${firstinput/secondinput}`;
 
+                    }
+                    function addit3(){
+                        let firstinput= document.querySelector('#input1').value;
+                        firstinput= Number(firstinput);
+                        let symbol= document.querySelector('.currentsymbol');
+                        let secondinput= document.querySelector('#input2').value;
+                        secondinput= Number(secondinput)
+                        let myanswer=document.querySelector('.myanswer');
+                        symbol.textContent='-';
+                        myanswer.innerHTML = `=${firstinput-secondinput}`;
 
+                    }
+                    function addit4(){
+                        let firstinput= document.querySelector('#input1').value;
+                        firstinput= Number(firstinput);
+                        let symbol= document.querySelector('.currentsymbol');
+                        let secondinput= document.querySelector('#input2').value;
+                        secondinput= Number(secondinput)
+                        let myanswer=document.querySelector('.myanswer');
+                        symbol.textContent='%';
+                        myanswer.innerHTML = `=${firstinput%secondinput}`;
 
+                    }
+
+                </script>
+            </div>
+        
+        </center>
+        <br><br>
+        <div class="container pen">
+            <h3 class="text-center">Investment Calculator</h3><br>
+           <label>HOW MUCH DO YOU WISH TO INVEST WITH US:</label> <input placeholder="Enter amount" id="www"><br><br>
+            <select id="select">
+                <option selected value="1" id="duration"> Select the Duration</option>
+                <option value="2">2 Month</option>
+                <option value="4">4 Month</option>
+                <option value="6">6 Month</option>
+                <option value="8">8 Month</option>
+                <option value="10">10 Month</option>
+                <option value="12">12 Month</option>
+            </select>
+            <button onclick="get()">Calculate your total Investment amount</button>
+            <p>Note that: <b>We calculate our Investment rate at 10%</b></p>
+            <p class="result"></p>
+        </div>
+       <script>
+            function get() {
+            let investment = document.getElementById('www').value;
+            let duration = document.getElementById('select').value;
+            investment = Number(investment);
+            let interestRate = 0.01;
+            let months = Number(duration);
+            let finalAmount = investment * duration;  
+            finalAmount = finalAmount; 
+            let totalAmount = `If you invest ${investment} for ${months} months, you will have ${finalAmount} at the end of ${months} months`;
+            document.querySelector('.result').innerHTML = totalAmount;
+            }
+            
+              
+        </script>
+        <div class="container all">
+            <h3 class="text-center">Loan Calculator</h3><br>
+           <label>HOW MUCH DO YOU WISH TO BORROW FROM US:</label> <input placeholder="Enter amount" id="wew"><br><br>
+            <select id="but">
+                <option selected value="1" id="duration"> Select the Duration</option>
+                <option value="2">2 Month</option>
+                <option value="4">4 Month</option>
+                <option value="6">6 Month</option>
+                <option value="8">8 Month</option>
+                <option value="10">10 Month</option>
+                <option value="12">12 Month</option>
+            </select>
+            <button onclick="cal()">Calculate the amount you would pay back</button>
+            <p>Note that: <b>We calculate our Investment rate at 10%</b></p>
+            <p class="answers"></p>
+        </div>
+
+        <script>
+            function cal(){
+                let loan= document.getElementById('wew').value;
+                let duration= document.getElementById('but').value;
+                loan= Number(loan);
+                let interestRate= 0.6;
+                let months= Number(duration);
+                let totalAmount= loan + (loan/duration);
+                totalAmount= totalAmount;
+                let allAmount= `If you borrowed ${loan} for ${months} months, you will have to pay back ${totalAmount} at the end of ${months} months`;;
+                document.querySelector('.answers').innerHTML = allAmount;
+            }
+        </script>
 
 
 
