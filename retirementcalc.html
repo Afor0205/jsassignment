@@ -50,23 +50,23 @@
             }
             function calculate() {
                 let yearOfBirth = document.getElementById('man').value;  
-                if (isNaN(yearOfBirth) || yearOfBirth === "") {
-                    alert("Please enter a valid year of birth.");
-                    return;
-                }
                 let currentYear = new Date().getFullYear();
                 let age = ageCalc(Number(yearOfBirth), currentYear);
     
                 let remainingYears = retirementAge - age;
     
                 let result = '';
-                if (remainingYears > 0) {
-                    result = `You will retire in ${remainingYears} years`;
-                } else if (remainingYears === 0) {
+                if (yearOfBirth == 1959) { 
+                    result = 'You should have retired last year!';
+                } else if (yearOfBirth == 1960) { 
+                    result = 'You will retire next year!';
+
+                } else if (remainingYears > 0) {
+                    result = `You should retire in the next ${remainingYears} years`; 
+                } else if (remainingYears === 0) { 
                     result = 'You can retire this year!';
-                } else {
-                    result = `You should have retired ${-remainingYears} years ago`;
-                }
+                } else { 
+                    result = `You should have retired ${-remainingYears} years ago`; }
                 document.querySelector('.answer').innerText = result;
             }
         </script>
