@@ -161,7 +161,7 @@
                 <option value="12">12 Month</option>
             </select>
             <button onclick="get()">Calculate your total Investment amount</button>
-            <p>Note that: <b>We calculate our Investment rate at 10%</b></p>
+            <p>Note that: <b>We calculate our interest rate at 10%</b></p>
             <p class="result"></p>
         </div>
        <script>
@@ -169,11 +169,11 @@
             let investment = document.getElementById('www').value;
             let duration = document.getElementById('select').value;
             investment = Number(investment);
-            let interestRate = 0.01;
+            let interestRate = 0.1;
             let months = Number(duration);
-            let finalAmount = investment * duration;  
+            let finalAmount = investment * interestRate * (duration/12) + investment;  
             finalAmount = finalAmount; 
-            let totalAmount = `If you invest ${investment} for ${months} months, you will have ${finalAmount} at the end of ${months} months`;
+            let totalAmount = `If you invest ${investment} for ${months} months, you will have ${finalAmount} at the end of ${months} month`;
             document.querySelector('.result').innerHTML = totalAmount;
             }
             
@@ -191,8 +191,8 @@
                 <option value="10">10 Month</option>
                 <option value="12">12 Month</option>
             </select>
-            <button onclick="cal()">Calculate the amount you would pay back</button>
-            <p>Note that: <b>We calculate our Investment rate at 10%</b></p>
+            <button onclick="cal()">Calculate your monthly repayment</button>
+            <p>Note that: <b>We calculate our interest rate at 10%</b></p>
             <p class="answers"></p>
         </div>
 
@@ -201,11 +201,13 @@
                 let loan= document.getElementById('wew').value;
                 let duration= document.getElementById('but').value;
                 loan= Number(loan);
-                let interestRate= 0.6;
+                let interestRate= 0.1;
+                let totalInterest= loan * interestRate;
                 let months= Number(duration);
-                let totalAmount= loan + (loan/duration);
+                let totalMoney= loan + totalInterest;
+                let totalAmount= totalMoney/duration;
                 totalAmount= totalAmount;
-                let allAmount= `If you borrowed ${loan} for ${months} months, you will have to pay back ${totalAmount} at the end of ${months} months`;;
+                let allAmount= `If you borrowed ${loan} for ${months} months, you will have to pay back ${totalAmount} at the end of each month`;;
                 document.querySelector('.answers').innerHTML = allAmount;
             }
         </script>
